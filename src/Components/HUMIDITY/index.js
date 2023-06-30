@@ -1,9 +1,9 @@
 import React from 'react';
-// import  {UseWeatherAppContext} from '../../Context/Context';
+import  {UseWeaterAPPContext} from '../../Context/Context';
 
 const HumidityComponents = ()=>{
     
-    let {state:{current, city}} = UseWeatherAppContext();
+    let {state:{current, city}} = UseWeaterAPPContext();
     console.log('myData', current, city);
 
     const uvLevel = (uvIndex) => {
@@ -29,10 +29,10 @@ const HumidityComponents = ()=>{
                 <div className='title'>WIND </div>
                 <div className='value'>{Math.round(current.wind_speed)} km/h</div>
             </div>
-            {/* <div className='humidityData'>
+            <div className='humidityData'>
                 <div className='title'>{city.city} - {city.admin_name} - Population</div>
                 <div className='value'>{parseFloat(city.population).toLocaleString('en')}</div>
-            </div> */}
+            </div>
         </div>: ''
         }
             

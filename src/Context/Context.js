@@ -18,14 +18,14 @@ const WeaterAPPProvider=({children}) =>{
     },
         current:'',
         daily:'',
-        hour:''
+        // hour:''
     })
 return (
-    <>
+    
     <WeaterAPPContext.Provider value={{state, dispatch}}>
         {children}
     </WeaterAPPContext.Provider>
-    </>
+    
 )
 }
 export default WeaterAPPProvider;

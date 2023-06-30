@@ -1,6 +1,6 @@
 import React from 'react';
 import dayjs from "dayjs";
-// import  {UseWeatherAppContext} from '../../Context/Context';
+import  {UseWeaterAPPContext} from '../../Context/Context';
 const LeftIndex = ()=>{
     const WEEKDAYS = [
         "Sunday",
@@ -11,7 +11,7 @@ const LeftIndex = ()=>{
         "Friday",
         "Saturday",
       ];
-    const {state:{city,current}} = UseWeatherAppContext();
+    const {state:{city,current}} = UseWeaterAPPContext();
 
     if (!current) return <div>Loading...</div>;
     //console.log('current',city)
@@ -20,9 +20,9 @@ const LeftIndex = ()=>{
         <>
             <div className='leftWrap'>
                 <div className='dateWrap'>
-                    {/* <h2>{WEEKDAYS[weekdayIndex]}</h2> */}
+                    <h2>{WEEKDAYS[weekdayIndex]}</h2>
                     <span className="dateDay">
-                        {/* {dayjs.unix(current.dt).format("DD MMM YYYY")} */}
+                        {dayjs.unix(current.dt).format("DD MMM YYYY")}
                     </span>
                     <span className="locationName">{city.city} - {city.admin_name} - {city.country}</span>
                 </div>
