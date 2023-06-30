@@ -37,7 +37,7 @@ const Index=()=> {
       useEffect(()=>{
         fetchData();
      
-  //    // eslint-disable-next-line
+     // eslint-disable-next-line
   }, [city])
   return (
     <div className="stateWrap">
