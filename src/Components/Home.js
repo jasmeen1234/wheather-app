@@ -1,6 +1,7 @@
 import React from 'react'
 import IndexRight from './Right/IndexRight'
-import WeekInfoCardComponents from './WeekInfoCard'
+import HumidityComponents from './HUMIDITY'
+// import WeekInfoCardComponents from './WeekInfoCard'
 // import './App.css'
 function Home() {
   return (
@@ -9,7 +10,8 @@ function Home() {
         {/* left  component */}
         <div className="rightSide">
           <IndexRight/>
-          <WeekInfoCardComponents/>
+          {/* <WeekInfoCardComponents/> */}
+          <HumidityComponents/>
         </div>
       </div>
     </div>
