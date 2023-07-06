@@ -1,0 +1,18 @@
+
+  .map-container{
+    display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding-left: 20px;
+      border-radius: 25px;
+      width: 300px;
+      height: 50vh;
+     
+      /* justify-content: flex-end; */
+      align-items: flex-start;
+      transition: transform .3s ease;
+      transform: translateZ(0) scale(1.02) perspective(1000px);
+      background: lightblue;
+      margin-right: 10px;
+      box-shadow: -1px 1px 9px 14px rgb(0 0 0 / 30%);
+  }

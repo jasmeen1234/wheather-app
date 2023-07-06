@@ -3,14 +3,15 @@ import IndexRight from './Right/IndexRight'
 import HumidityComponents from './HUMIDITY'
 import WeekInfoCardComponents from './WeekInfoCard'
 // import './App.css'
-import LeftIndex from './Left/LeftIndex'
+import MapIndia from './Left/MapIndia'
 function Home() {
   return (
     <div className="homeSection">
       <div className="weather-section">
-        <LeftIndex/>
+        <MapIndia/>
         </div>
         <div className="rightSide">
+        
           <IndexRight/>
           <WeekInfoCardComponents/>
           <HumidityComponents/>

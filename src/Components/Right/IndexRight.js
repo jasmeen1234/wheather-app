@@ -1,8 +1,10 @@
 import React, {useEffect} from 'react'
 import axios from "axios";
 import cities from '../../Data/in.json'
+import { useNavigate } from 'react-router-dom';
 import  {UseWeaterAPPContext} from '../../Context/Context';
 const Index=()=> {
+  const navigate = useNavigate();
   const {state:{city}, dispatch} = UseWeaterAPPContext();
   console.log('UseWeaterAPPContext',UseWeaterAPPContext());
   const handleChange = (e)=>{
@@ -20,8 +22,9 @@ const Index=()=> {
     let lat = city && city.lat ? city.lat : '';
     let long = city && city.lng ? city.lng : '';
     let exclude = 'hourly,minutely';
-    const URL =  `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=${exclude}&units=metric&lang=tr&appid=${APIKEY}`
     
+    const URL =  `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=${exclude}&units=metric&lang=tr&appid=${APIKEY}`
+    // const URL = `http://maps.openweathermap.org/maps/2.0/weather/${PAR0}/{z}/{x}/{y}?appid=${APIKEY}`;
     const fetchData = ()=>{
       axios(URL).then((data)=>{
           let _daily = data.data.daily
@@ -36,7 +39,10 @@ const Index=()=> {
       }
       useEffect(()=>{
         fetchData();
-     
+        if(!localStorage.getItem("name")){
+          console.log("Already Login")
+          navigate("/")
+        };
      // eslint-disable-next-line
   }, [city])
   return (
